@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*## Colors*/
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+
+body {
+    font-family: 'Manrope', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Light-Grayish-Blue)
+}
+
+.container {
+    width: 50rem;
+    height: 16rem;
+    display: flex;
+    background-color: white;
+    border-radius: .5rem
+}
+
+.container .image img{
+    width: 20rem;
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.container .text {
+    padding: 2rem 3rem;
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.container .text h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Grayish-Blue);
+    margin-bottom: .8rem;
+}
+
+.container .text > p {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--Desaturated-Dark-Blue);
+    margin-bottom: 1.2rem;
+}
+
+.container .text .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .text .profile .info {
+    display: flex;
+}
+
+.container .text .profile .info img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%
+}
+
+.container .text .profile .info p {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    margin-left: .8rem;
+    line-height: 1.2rem;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.container .text .profile .info p span {
+    font-weight: 400;
+    color: var(--Grayish-Blue);
+}
+
+.container .text .profile .share {
+    position: relative;
+}
+
+.container .text .profile .share .display {
+    display: none;
+}
+
+.container .text .profile .share .display.block {
+   display: block;
+}
+
+.container .text .profile .share .display .accounts {
+    width: 13rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: -4.5rem;
+    right: -5.5rem;
+    padding: .8rem .5rem;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    border-radius: .5rem;
+}
+
+.container .text .profile .share .display .accounts::after {
+    content: "";
+    position: absolute;
+    border: .8rem solid transparent;
+    border-top-color: var(--Very-Dark-Grayish-Blue);;
+    bottom: -1.4rem;
+}
+
+.container .text .profile .share .display .accounts p {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--Grayish-Blue);
+    letter-spacing: .2rem;
+}
+
+.container .text .profile .share .arrow {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.container .text .profile .share .arrow.color {
+    background-color: var(--Very-Dark-Grayish-Blue);
+}
+
+.container .text .profile .share .arrow.color img {
+    filter: brightness(300%)
+}
+
+@media (hover : hover) {
+    .container .text .profile .share .display .accounts > img,
+    .container .text .profile .share .display .accounts > p, 
+    .container .text .profile .share .arrow {
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 375px) {
+    body {
+        height: auto;
+        padding: 5rem 0;
+    }
+
+    .container {
+        width: 90vw;
+        height: auto;
+        padding-bottom: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container .image img{
+        width: 90vw;
+        border-radius: .5rem .5rem 0 0;
+        margin-bottom: 3rem;
+    }
+
+    .container .text {
+        padding: 0rem 1.9rem;
+        border-radius: 0 .5rem .5rem 0;
+    }
+
+    .container .text h1 {
+        font-size: 1.1rem;
+    }
+
+    .container .text > p {
+        font-size: 0.875rem;
+        margin-bottom: 2rem;
+    }
+
+    .container .text .profile .share .display .accounts {
+        width: 90vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        top: -.5rem;
+        right: -1.9rem;
+        padding: 1.5rem 7rem 1.5rem 0;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        border-radius: 0 0 .5rem .5rem;
+    }
+
+    .container .text .profile .share .display .accounts::after {
+        border: 0rem;
+        bottom: 0;
+    }
+
+    .container .text .profile .share .display .accounts p {
+        font-size: 0.8125rem;
+    }
+
+    .container .text .profile .share .arrow {
+        margin-top: .65rem;
+    }
+
+    .container .text .profile .share .arrow.color {
+        background-color: var(--Grayish-Blue);
+        z-index: 1;
+        position: relative
+    }
+}
